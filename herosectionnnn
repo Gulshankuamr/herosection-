@@ -1,0 +1,96 @@
+"use client";
+
+import Image from "next/image";
+
+export default function ServiceHero() {
+  return (
+    <section className="relative w-full overflow-hidden bg-[#00AAFF] px-6 py-16 lg:py-24">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-100 hidden md:block"
+        style={{ backgroundImage: "url('/bG (2).png')" }}
+      />
+      
+      {/* Main Content */}
+      <div className="relative z-10 max-w-[1200px] mx-auto">
+        {/* Hero Row */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center ">
+          {/* Left Content */}
+          <div className="space-y-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0D1B4B] leading-tight">
+              Engineering Digital Products That Drive Business Growth
+            </h1>
+            <p className="text-base sm:text-lg text-[#0D1B4B]/80 max-w-lg">
+              We design, develop, and scale custom software, AI-powered platforms, and 
+              automation solutions that help businesses innovate and thrive.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+              <button className="w-full sm:w-auto bg-[#0047FF] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#0D1B4B] transition">
+                Start Your Project
+              </button>
+              <button className="w-full sm:w-auto border-2 border-[#0047FF] text-[#0047FF] px-8 py-3 rounded-lg font-semibold hover:bg-[#0047FF] hover:text-white transition">
+                Explore Services
+              </button>
+            </div>
+          </div>
+
+          {/* Right Side Images */}
+          <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[550px] mt-4 lg:mt-0">
+            {/* Top Right Image */}
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] lg:w-[340px] lg:h-[340px] bg-white rounded-2xl shadow-2xl p-3 z-10 overflow-hidden">
+              <Image
+                src="/bgggggg.png"
+                alt="Custom Software Development"
+                fill
+                className="object-cover rounded-xl"
+              />
+            </div>
+
+            {/* Bottom Left Image */}
+            <div className="absolute bottom-0 left-0 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] lg:w-[340px] lg:h-[340px] bg-white rounded-2xl shadow-2xl p-3 z-20 overflow-hidden">
+              <Image
+                src="/bggggg.png"
+                alt="AI & Automation Solutions"
+                fill
+                className="object-cover rounded-xl"
+              />
+            </div>
+
+            {/* Decorative blur element */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] lg:w-[220px] lg:h-[220px] rounded-full bg-gradient-to-br from-[#0047FF]/10 to-[#00AAFF]/10 blur-3xl" />
+          </div>
+        </div>
+
+        {/* Services Cards */}
+        <div className="mt-12 sm:mt-16 lg:mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+          {[
+            { 
+              title: "Custom Software Development", 
+              desc: "Build scalable web applications, SaaS platforms, and enterprise systems tailored to your unique business needs." 
+            },
+            { 
+              title: "AI & Business Automation", 
+              desc: "Automate repetitive workflows, improve productivity, and leverage AI-powered solutions to save time and reduce costs." 
+            },
+            { 
+              title: "Cloud & Digital Transformation", 
+              desc: "Modernize your infrastructure with secure cloud technologies, system integrations, and digital solutions for long-term growth." 
+            },
+          ].map((card, i) => (
+            <div 
+              key={i} 
+              className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border-t-4 border-[#0047FF] hover:shadow-2xl transition duration-300 hover:-translate-y-1"
+            >
+              <h3 className="text-lg sm:text-xl font-bold text-[#0D1B4B] mb-3">{card.title}</h3>
+              <p className="text-[#0D1B4B]/70 mb-6 leading-relaxed text-sm sm:text-base">{card.desc}</p>
+              <a href="#" className="text-[#0047FF] font-bold hover:underline flex items-center gap-2 group text-sm sm:text-base">
+                Learn More 
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
